@@ -1,4 +1,4 @@
-const napnux = require("../../../../index.js");
+const napnux = require("napnus");
 
 module.exports = napnux()
   .static(__dirname + "/public")

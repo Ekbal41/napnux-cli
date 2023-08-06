@@ -5,13 +5,16 @@
   "main": "index.js",
   "files": [
     "napnux-cli.js",
-    "templates"
+    "templates",
+    "utils/*.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "nux": "napnux-cli.js"
+    "nux": "napnux-cli.js",
+    "napnux": "napnux-cli.js",
+    "hay": "napnux-cli.js"
   },
   "keywords": [
     "napnux",
@@ -25,13 +28,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "cli-spinners": "^2.9.0",
     "colorette": "^2.0.20",
     "commander": "^11.0.0",
-    "esm": "^3.2.25",
-    "fs-extra": "^11.1.1",
-    "inquirer": "^9.2.10",
-    "napnus": "^1.0.1",
-    "ora": "^7.0.1",
-    "util": "^0.12.5"
+    "inquirer": "^9.2.10"
   }
 }
