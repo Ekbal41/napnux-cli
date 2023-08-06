@@ -1,16 +1,18 @@
+#!/usr/bin/env node
+
 const { program } = require("commander");
 const fs = require("fs").promises;
 const path = require("path");
 const { red, magenta } = require("colorette");
-const createSpinner = require("./utils/createSpinner");
-const copyFolderRecursive = require("./utils/copyFolderRecursive");
-const createPackageJson = require("./utils/createPackageJson");
-const installDependencies = require("./utils/installDependencies");
+const createSpinner = require("../utils/createSpinner");
+const copyFolderRecursive = require("../utils/copyFolderRecursive");
+const createPackageJson = require("../utils/createPackageJson");
+const installDependencies = require("../utils/installDependencies");
 
 const spinner = createSpinner();
 
 program
-  .version("1.0.0")
+  .version("1.0.6")
   .command("create-project <projectName>")
   .action(async (projectName) => {
     const sourcePath = path.join(__dirname, "templates", "project-temp");
@@ -30,7 +32,7 @@ program
   })
   .command("create-app <appName>")
   .action(async (appName) => {
-    const sourcePath = path.join(__dirname, "templates", "app");
+    const sourcePath = path.join(__dirname, "templates", "app-temp");
     const targetPath = path.join(process.cwd(), "apps", appName);
 
     try {

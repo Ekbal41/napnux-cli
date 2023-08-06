@@ -9,13 +9,13 @@ async function createPackageJson(targetPath, projectName) {
     description: `A project created with the CLI: ${projectName}`,
     main: "index.js",
     scripts: {
-      start: "node index.js",
+      start: "node server.js",
     },
     keywords: [],
     author: "",
-    license: "ISC",
+    license: "MIT",
     dependencies: {
-      napnus: "^1.0.1",
+      napnux: "*",
     },
   };
 

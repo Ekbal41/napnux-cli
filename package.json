@@ -1,20 +1,19 @@
 {
   "name": "napnux-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.6",
+  "description": "A CLI tool to generate a new project with a single command.",
   "main": "index.js",
   "files": [
-    "napnux-cli.js",
-    "templates",
-    "utils/*.js"
+    "cli/**",
+    "utils/**"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "nux": "napnux-cli.js",
-    "napnux": "napnux-cli.js",
-    "hay": "napnux-cli.js"
+    "nux": "cli/napnux-cli.js",
+    "napnux": "cli/napnux-cli.js",
+    "hay": "cli/napnux-cli.js"
   },
   "keywords": [
     "napnux",
