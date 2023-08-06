@@ -1,0 +1,37 @@
+{
+  "name": "napnux-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "napnux-cli.js",
+    "templates"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "nux": "napnux-cli.js"
+  },
+  "keywords": [
+    "napnux",
+    "napnux-cli",
+    "nux"
+  ],
+  "author": "Asif Ekbal (https://asifekbal.vercel.app)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ekbal41/napnux-cli.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "colorette": "^2.0.20",
+    "commander": "^11.0.0",
+    "esm": "^3.2.25",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^9.2.10",
+    "napnus": "^1.0.1",
+    "ora": "^7.0.1",
+    "util": "^0.12.5"
+  }
+}
