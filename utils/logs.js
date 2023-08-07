@@ -4,8 +4,8 @@ function logInfo(message) {
   console.log("   " + bold(green("✔")) + " " + gray(message));
 }
 
-function logError(message) {
-  console.error("   " + bold(red("✖")) + " " + message);
-}
+// function logError(message) {
+//   console.error("   " + bold(red("✖")) + " " + message);
+// }
 
 module.exports = { logInfo, logError };
