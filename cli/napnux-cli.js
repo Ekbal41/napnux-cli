@@ -12,6 +12,7 @@ const installDependencies = require("../utils/installDependencies");
 const spinner = createSpinner();
 
 program
+  .name("napnux-cli")
   .version("1.0.6")
   .command("create-project <projectName>")
   .action(async (projectName) => {
@@ -29,20 +30,19 @@ program
       spinner.fail(red("Error creating project:"));
       console.error(error);
     }
-  })
-  .command("create-app <appName>")
-  .action(async (appName) => {
-    const sourcePath = path.join(__dirname, "templates", "app-temp");
-    const targetPath = path.join(process.cwd(), "apps", appName);
-
-    try {
-      await fs.mkdir(targetPath);
-      await copyFolderRecursive(sourcePath, targetPath);
-      spinner.succeed(`App '${appName}' created successfully.`);
-    } catch (error) {
-      spinner.fail(red("Error creating app:"));
-      console.error(error);
-    }
   });
+program.command("create-app <appName>").action(async (appName) => {
+  const sourcePath = path.join(__dirname, "templates", "app-temp");
+  const targetPath = path.join(process.cwd(), "apps", appName);
+
+  try {
+    await fs.mkdir(targetPath);
+    await copyFolderRecursive(sourcePath, targetPath);
+    spinner.succeed(`App '${appName}' created successfully.`);
+  } catch (error) {
+    spinner.fail(red("Error creating app:"));
+    console.error(error);
+  }
+});
 
 program.parse(process.argv);
