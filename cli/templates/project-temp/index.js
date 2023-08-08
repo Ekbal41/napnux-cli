@@ -1,6 +1,6 @@
-const root = require("./root.js");
+const handler = require("./handler.js");
 
-root
+handler
   .static(__dirname + "/public")
   .ejs({
     views: __dirname + "/views",

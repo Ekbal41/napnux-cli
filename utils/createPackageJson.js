@@ -9,10 +9,11 @@ async function createPackageJson(targetPath, projectName) {
     description: `A project created with Napnux CLI: ${projectName}`,
     main: "index.js",
     scripts: {
-      start: "nodemon server.js",
+      start: "node index.js",
+      nodemon: "nodemon index.js",
       bsync:
         "browser-sync start --proxy localhost:3000 --files 'public, views', apps/**/**",
-      dev: "npm-run-all --parallel bsync start",
+      dev: "npm-run-all --parallel bsync nodemon",
     },
     keywords: ["napnux", "napnux cli"],
     author: "",
@@ -24,6 +25,9 @@ async function createPackageJson(targetPath, projectName) {
       "browser-sync": "^2.29.3",
       nodemon: "^3.0.1",
       "npm-run-all": "^4.1.5",
+    },
+    engines: {
+      node: "14.x",
     },
   };
 

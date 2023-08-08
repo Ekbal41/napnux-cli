@@ -8,4 +8,4 @@ function logInfo(message) {
 //   console.error("   " + bold(red("✖")) + " " + message);
 // }
 
-module.exports = { logInfo, logError };
+module.exports = { logInfo };
