@@ -5,17 +5,25 @@ const fs = require("fs").promises;
 async function createPackageJson(targetPath, projectName) {
   const packageData = {
     name: projectName,
-    version: "1.0.0",
-    description: `A project created with the CLI: ${projectName}`,
+    version: "1.0.9",
+    description: `A project created with Napnux CLI: ${projectName}`,
     main: "index.js",
     scripts: {
-      start: "node server.js",
+      start: "nodemon server.js",
+      bsync:
+        "browser-sync start --proxy localhost:3000 --files 'public, views', apps/**/**",
+      dev: "npm-run-all --parallel bsync start",
     },
-    keywords: [],
+    keywords: ["napnux", "napnux cli"],
     author: "",
     license: "MIT",
     dependencies: {
       napnux: "*",
+    },
+    devDependencies: {
+      "browser-sync": "^2.29.3",
+      nodemon: "^3.0.1",
+      "npm-run-all": "^4.1.5",
     },
   };
 

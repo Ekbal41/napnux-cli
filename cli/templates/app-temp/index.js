@@ -1,4 +1,4 @@
-const napnux = require("napnus");
+const napnux = require("napnux");
 
 module.exports = napnux()
   .static(__dirname + "/public")
@@ -6,5 +6,8 @@ module.exports = napnux()
     views: __dirname + "/views",
   })
   .get("/", (req, res) => {
-    res.render("hello");
+    res.render("hello-from-app", {
+      title: "Napnux | App",
+      name: req.originalUrl,
+    });
   });
